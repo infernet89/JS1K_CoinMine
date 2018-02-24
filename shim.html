@@ -140,48 +140,7 @@
       var TOKEN_RELOAD_ONORIENTATIONCHANGE = true;
     </script>
     <script type="demo">
-    //start
-    with(c)
-    {
-      with(Math)
-      {
-        t=document.getElementsByTagName('script')[0].innerHTML.toUpperCase().replace(/\W/g,'');
-        h=a.height;
-        j=a.width;
-        s=floor(sqrt(floor(h*j/t.length)))-2;
-        n=floor(j/s);
-        font = s+"px Courier";
-        strokeStyle="#000";
-        onkeyup=e=>{if(t[0].charCodeAt()==e.keyCode)t=t.substr(1)};
-        setInterval(function()
-        {
-          l=t.length;
-          fillStyle="#CCC";
-          fillRect(0,0,j,h);
-          fillStyle="#000";
-          i=-1;
-          while(l!=++i)
-          {
-            save();
-            translate(j-s*(i%n+1),h-s*(floor(i/n)));
-            beginPath();
-            moveTo(0,0);
-            lineTo(0,-s);
-            lineTo(s,-s);
-            lineTo(s,0);
-            stroke();
-            fillText(t[l-i-1],s/10,-s/5);
-            restore();
-          }
-          if(l==0)
-          {
-            c.fillStyle="Green";
-            c.fillRect(0,0,j,h);
-          }
-        },33);
-      }
-    }
-    //end
+    /*typethefollowingcharacterstowinthegame*/with(c){with(Math){t=document.getElementsByTagName('script')[0].innerHTML.toUpperCase().replace(/\W/g,'');h=a.height;j=a.width;s=floor(sqrt(floor(h*j/t.length)))-2;n=floor(j/s);font=s+"px Courier";strokeStyle="#000";onkeyup=e=>{t[0].charCodeAt()==e.keyCode?t=t.substr(1):t};setInterval(function(){l=t.length;l==0?fillStyle="#0F0":fillStyle="#CCC";fillRect(0,0,j,h);fillStyle="#000";i=-1;while(l!=++i){save();translate(j-s*(i%n+1),h-s*(floor(i/n)));beginPath();moveTo(0,0);lineTo(0,-s);lineTo(s,-s);lineTo(s,0);stroke();fillText(t[l-i-1],s/10+random(),-s/5+random());restore();}},33);}}//congratulationsyouwon
     </script>
     <script>
       (function(){var doc=document;var header=doc.getElementsByTagName("header")[0];var firstChild=header.firstChild;var p=doc.getElementsByClassName("p")[0];
